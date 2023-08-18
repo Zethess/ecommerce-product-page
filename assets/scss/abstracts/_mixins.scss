@@ -1,0 +1,48 @@
+/// Gestor Responsive
+/// @access public
+/// @param {String} $breakpoint - Punto de ruptura
+/// @requires $breakpoints
+/// 
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+    //Si existe 
+    @if $raw-query { 
+    //se convierte en una consulta en forma de cadena utilizando la función unquote si es una cadena o inspect si es una lista
+      $query: if(
+        type-of($raw-query) == 'string',
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+  
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No se ha encontrado un valor para `#{$breakpoint}`. '
+           + 'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
+    }
+  }
+
+@mixin flex-column-center($flex-direction: column, $align-items: ''){
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+}
+@mixin input-default-conf{
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+@mixin background-color($background: $linear-gradient-purple, $color: $white){
+  background: $background;
+  color: $color;
+}
+
+@mixin slider-conf($s_position, $s_border_size, $s_bg_color, $s_height_size, $s_width_size, $s_transition){
+  position: $s_position;
+  border-radius: $s_border_size;
+  background: $s_bg_color;
+  height: $s_height_size;
+  width: $s_width_size;
+  transition: $s_transition;
+}
