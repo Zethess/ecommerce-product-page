@@ -1,0 +1,96 @@
+
+.header-ham-menu{
+  @include respond-to('large'){
+  @include full-page-hide-or-not;
+  }
+}
+#ham-menu {
+    display: none;
+  }
+  #ham-menu:checked + label[for="ham-menu"] {
+    position: fixed;
+  }
+  label[for="ham-menu"] {
+    @include position-configuration($top:26px,$left:20px);
+    @include width-height(30px,23px);
+    z-index: 999;
+    display: block;
+    border-radius: 5px;
+  }
+  .ham-menu {
+    @include width-height($width: 80vw);
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    transform: translate(-110%);
+    z-index: 998;
+    background-color: $light-grayish-blue;
+    transition: 0.5s;
+  }
+  .bold-text {
+    padding: 100px 0px 0px 30px;
+    font-weight: bold;
+  }
+  .bold-text{
+    li {
+    font-size: 20px;
+    white-space: nowrap; /*Texto no se divida en varias lineas aunque no haya espacio suficiente*/
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    color: $very-dark-blue;
+    padding: 20px 0px;
+    }
+}
+  #ham-menu:checked + label {
+    background-color: transparent;
+    border-color: $menu-icon-color;
+  }
+  /*Hacer visible el div que contiene el menu*/
+  #ham-menu:checked ~ div.ham-menu {
+    transform: translate(0px);
+    visibility: visible;
+  }
+  .full-page-gray {
+    @include position-configuration($position:fixed);
+    @include width-height;
+    @include full-page-hide-or-not;
+    background-color: hsl(0, 0%, 0%,0.6);
+    z-index: 997;
+    transition: 500ms;
+  }
+  #ham-menu:checked ~ div.full-page-gray {
+    @include full-page-hide-or-not(0,visible,block);
+  }
+  .hide-des {
+    @include width-height;
+    @include flex-center(column, align);
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .menu-line {
+    @include width-height(10px,3px);
+    display: block;
+    /*primero aplica al lado superior, segundo aplica izquierda y derecha, y tercero aplica al lado inferior.*/
+    margin: 3.8px 0 0px;
+    border-radius: 2px 0 0 2px;
+    background-color: $menu-icon-color;
+    transition: 500ms;
+    transform-origin: right center;
+  }
+  .fourth-line,
+  .fifth-line,
+  .sixth-line {
+    border-radius: 0 2px 2px 0;
+    transform-origin: left center;
+  }
+  #ham-menu:checked + label span {
+    background-color: $menu-icon-color;
+  }
+  #ham-menu:checked + label span:nth-child(2),
+  #ham-menu:checked + label span:nth-child(5) {
+    transform: scale(0);
+  }
+  @include ham-menu-icon(1, 7px, 45deg);
+  @include ham-menu-icon(4, 7px, -45deg);
+  @include ham-menu-icon(3, -7px, -45deg);
+  @include ham-menu-icon(6, -7px, 45deg);

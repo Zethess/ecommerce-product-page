@@ -1,0 +1,43 @@
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    @include respond-to('large'){
+      @include full-page-hide-or-not;
+    }
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: block;
+  }
+  .hidden{
+      display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    @include background-color($white,$black);
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    padding: 9px 13px 7px 10px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    user-select: none; //al clicar no se resalta en azul
+    border-radius: 50%;
+    border: none;
+    margin: 0px 15px;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    padding: 9px 10px 7px 13px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    opacity: 0.8;
+  }

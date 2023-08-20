@@ -22,22 +22,41 @@
            + 'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
     }
   }
+  @mixin flex-center($flex-direction: column, $flex-style: none) {
+    display: flex;
+    flex-direction: $flex-direction;
+  
+    @if $flex-style == align or $flex-style == centerBoth{
+      align-items: center;
+    } 
+    @if $flex-style == justify or $flex-style == centerBoth{
+      justify-content: center;
+    }
+  }
+@mixin full-page-hide-or-not($opacity:0,$visibility:hidden,$display:none){
+  opacity: $opacity;
+  visibility: $visibility;
+  display: $display;
+}
+@mixin position-configuration($position:absolute,$top:0,$left:0){
+  position: $position;
+  top: $top;
+  left: $left;
+}
 
-@mixin flex-column-center($flex-direction: column, $align-items: ''){
-  display: flex;
-  flex-direction: $flex-direction;
-  align-items: $align-items;
-}
-@mixin input-default-conf{
-  -webkit-appearance: none;
-  visibility: hidden;
-  display: none;
-}
-@mixin background-color($background: $linear-gradient-purple, $color: $white){
+@mixin background-color($background: $orange, $color: $white){
   background: $background;
   color: $color;
 }
-
+@mixin width-height($width: 100%, $height: 100%){
+  width: $width;
+  height: $height;
+}
+@mixin ham-menu-icon($index, $y, $rotate) {
+  #ham-menu:checked + label span:nth-child(#{$index}) {
+    transform: translateY(#{$y}) rotate(#{$rotate});
+  }
+}
 @mixin slider-conf($s_position, $s_border_size, $s_bg_color, $s_height_size, $s_width_size, $s_transition){
   position: $s_position;
   border-radius: $s_border_size;

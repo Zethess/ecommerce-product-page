@@ -15,21 +15,20 @@
   </style>
 </head>
 <body>
-  <header class="">
-    <div class="left-header-design">
-      <div class="menu-btn">
+  <header class="header">
+      <div class="header-ham-menu">
         <input type="checkbox" id="ham-menu">
         <label for="ham-menu">
           <div class="hide-des">
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
+            <span class="menu-line first-line"></span>
+            <span class="menu-line second-line"></span>
+            <span class="menu-line third-line"></span>
+            <span class="menu-line fourth-line"></span>
+            <span class="menu-line fifth-line"></span>
+            <span class="menu-line sixth-line"></span>
           </div>
         </label>
-        <div class="full-page-green"></div>
+        <div class="full-page-gray"></div>
         <div class="ham-menu">
           <ul class=" bold-text">
             <li>Home</li>
@@ -42,15 +41,30 @@
         </div>
       </div>
       <div class="header-content">
-        <div>
-          <img src="assets/images/logo.svg" alt="">
+        <div class="header-logo-nav">
+          <div>
+            <img src="assets/images/logo.svg" alt="">
+          </div>
+          <nav>
+            <ul class="nav-options">
+              <li><a href="#">Collections</a><div class="hover-element"></div></li>
+              <li><a href="#">Men</a><div class="hover-element"></div></li>
+              <li><a href="#">Women</a><div class="hover-element"></div></li>
+              <li><a href="#">About</a><div class="hover-element"></div></li>
+              <li><a href="#">Contact</a><div class="hover-element"></div></li>
+            </ul>
+          </nav>
         </div>
         <div class="header-user-cart">
-          <div class="icon-cart"><img src="assets/images/icon-cart.svg" alt=""></div>
+          <div class="icon-cart">
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.925 3.641H3.863L3.61 0.816A.896.896 0 0 0 2.717 0H0.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53" fill-rule="nonzero"/>
+            </svg>            
+          </div>
           <div class="avatar"><img src="assets/images/image-avatar.png" alt="" width="25px" height="25px"></div>
+        </div>
       </div>
-      </div>
-    </div>
+    
   </header>
   <main>
     <!-- Slideshow container -->
@@ -73,32 +87,67 @@
   </div>
 
   <!-- Next and previous buttons -->
-  <a class="prev" id="prevSlideShow" >&#10094;</a>
-  <a class="next" id="nextSlideShow" >&#10095;</a>
+  <button class="prev" id="prevSlideShow" ><img src="assets/images/icon-previous.svg" alt="" width="13" height="18"></a>
+  <button class="next" id="nextSlideShow" ><img src="assets/images/icon-next.svg" alt="" width="13" height="18"></a>
 </div>
-<div>
-  <p>Sneaker Company</p>
-  <h1>Fall Limited Edition Sneakers</h1>
-  <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-    durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-  <div class="">
-    <div>
-    <p>$125.00<span>50%</span></p>
-    <p>$250.00</p>
+  <div class="main-description">
+
+      <!-- Container for the image gallery -->
+  <div class="slideshow-gallery-container">
+
+  <!-- Full-width images with number text -->
+  <div class="slideshow-gallery hidden">
+      <img src="assets/images/image-product-1.jpg" style="width:100%">
+  </div>
+
+  <div class="slideshow-gallery hidden">
+      <img src="assets/images/image-product-2.jpg" style="width:100%">
+  </div>
+
+  <div class="slideshow-gallery hidden">
+      <img src="assets/images/image-product-3.jpg" style="width:100%">
+  </div>
+
+  <div class="slideshow-gallery hidden">
+      <img src="assets/images/image-product-4.jpg" style="width:100%">
+  </div>
+
+  <!-- Thumbnail images -->
+    <div class="thumbnail-gallery">
+      <div class="thumbnail">
+        <img class="demo cursor" src="assets/images/image-product-1.jpg" style="width:100%" >
+      </div>
+      <div class="thumbnail">
+        <img class="demo cursor" src="assets/images/image-product-2.jpg" style="width:100%"  >
+      </div>
+      <div class="thumbnail">
+        <img class="demo cursor" src="assets/images/image-product-3.jpg" style="width:100%" >
+      </div>
+      <div class="thumbnail">
+        <img class="demo cursor" src="assets/images/image-product-4.jpg" style="width:100%">
+      </div>
     </div>
   </div>
-  <div>
-    <input type="text">
-    <button><img src="" alt="">Add to cart</button>
+  <div class="description-product">
+    <p class="description-product-company">Sneaker Company</p>
+    <h1 class="description-product-name">Fall Limited Edition Sneakers</h1>
+    <p class="description-product-text">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+    <div class="description-product-price">
+      <p class="description-product-price-after">$125.00<span>50%</span></p>
+      <p class="description-product-price-before"><del>$250.00</del></p>
+    </div>
+    <div class="description-product-add-product">
+      <div class="description-product-add-product-input">
+      <img class="description-product-add-product-input-minus minus-plus-icons" src="assets/images/icon-minus.svg" alt="">
+      <input class="description-product-add-product-input-div" type="text" value="0" min="0">
+      <img class="description-product-add-product-input-plus" src="assets/images/icon-plus.svg" alt="">
+      </div>
+      <button class="description-product-add-product-btn" id="add-to-cart-btn"><img src="assets/images/icon-cart.svg" alt="">Add to cart</button>
+    </div>
   </div>
 </div>
   </main>
-  Collections
-  Men
-  Women
-  About
-  Contact
-
   <script src="assets/js/lib/jquery-3.7.0.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

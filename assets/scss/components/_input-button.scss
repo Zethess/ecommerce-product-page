@@ -1,0 +1,20 @@
+.description-product-add-product-input{
+    position: relative;
+  }
+  .description-product-add-product-input-minus{
+    @include position-configuration($top:23px,$left:5%);
+  }
+  .description-product-add-product-input-div{
+    @include width-height($height: 50px);
+    border-radius: 10px;
+    border: none;
+    background-color: $light-grayish-blue;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+  }
+  .description-product-add-product-input-plus{
+    position: absolute;
+    top: 20px;
+    right: 5%;
+  }

@@ -1,183 +1,55 @@
 
-  #ham-menu {
-    display: none;
-  }
-  label[for="ham-menu"] {
-    display: block;
-    position: fixed;
-    top: 26px;
-    left: 20px;
-    z-index: 999;
-    width: 30px;
-    height: 23px;
-    border-radius: 5px;
+@import '../components/slideshow';
   
+  /* Position the image container (needed to position the left and right arrows) */
+  .slideshow-gallery-container {
+    position: relative;
   }
-  .ham-menu {
-    width: 80vw;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    visibility: hidden;
-    transform: translate(-110%);
-    z-index: 998;
-    background-color: $light-grayish-blue;
-    transition: 0.5s;
-  }
-  .ham-menu > ul {
-    padding: 100px 0px 0px 30px;
-  }
-  .ham-menu > ul > li {
-    font-size: 20px;
-    white-space: nowrap; /*Texto no se divida en varias lineas aunque no haya espacio suficiente*/
-    letter-spacing: 0.15em;
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
     cursor: pointer;
-    color: $very-dark-blue;
-    padding: 20px 0px;
-  }
-  #ham-menu:checked + label {
-    background-color: transparent;
-    border-color: $menu-icon-color;
-  }
-  /*Hacer visible el div que contiene el menu*/
-  #ham-menu:checked ~ div.ham-menu {
-    transform: translate(0px);
-    visibility: visible;
-  }
-  .full-page-green {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: hsl(0, 0%, 0%,0.6);
-    z-index: 997;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-    transition: 500ms;
-    position: fixed;
-  
-  }
-  #ham-menu:checked ~ div.full-page-green {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  [for="ham-menu"] > div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    align-items: center;
-  }
-  .menu-line {
-    display: block;
-    width: 10px;
-    height: 3px;
-    /*primero aplica al lado superior, segundo aplica izquierda y derecha, y tercero aplica al lado inferior.*/
-    margin: 3.8px 0 0px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    background-color: $menu-icon-color;
-    transition: 500ms;
-    transform-origin: right center;
-  }
-  [for="ham-menu"] > div > span:nth-child(4),
-  [for="ham-menu"] > div > span:nth-child(5),
-  [for="ham-menu"] > div > span:nth-child(6) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    transform-origin: left center;
-  }
-  #ham-menu:checked + label span {
-    background-color: $menu-icon-color;
-  }
-  #ham-menu:checked + label span:nth-child(2),
-  #ham-menu:checked + label span:nth-child(5) {
-    transform: scale(0);
-  }
-  #ham-menu:checked + label span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  #ham-menu:checked + label span:nth-child(4) {
-    transform: translateY(7px) rotate(-45deg);
-  }
-  #ham-menu:checked + label span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-  #ham-menu:checked + label span:nth-child(6) {
-    transform: translateY(-7px) rotate(45deg);
-  }
-  .bold-text {
-    font-weight: bold;
   }
 
-  .left-header-design {
-    display: flex;
-    align-items: center; /* Alineación verticalmente centrada */
+  .slideshow-gallery{
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  .thumbnail-gallery{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 32px;
+    margin-top: 30px;
+  }
+  .thumbnail-gallery:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   
-  .header-content {
-    width: 100%;
-    display: flex;
-    align-items: center; /* Alineación verticalmente centrada */
-    justify-content: space-between;
-    margin: 23px 0px 23px 70px;
+  /* Six columns side by side */
+  .thumbnail {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    overflow: hidden;
+    &.selected
+    {
+      border: 2px solid $orange;
+      .demo{
+        opacity: 0.2;
+      }
+    }
   }
-
-  .header-user-cart{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    gap: 25px;
-    margin: 0px 25px;
+  .demo{
+  &:hover{
+    opacity: 0.4;
   }
-  * {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: block;
-}
-.hidden{
-    display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  height: 40px;
-  margin-top: -22px;
-  padding: 8px 16px 10px 16px;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  user-select: none; //al clicar no se resalta en azul
-  background-color: white;
-  border-radius: 50%;
-  margin: 0px 15px;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  opacity: 0.8;
 }

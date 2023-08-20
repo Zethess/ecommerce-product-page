@@ -11,8 +11,12 @@ class TemplateManager {
                 this.showSlides(this.slideIndex += 1);
             });
             this.showSlides(this.slideIndex);
-
-             
+            this.showGalleryPhoto(0);
+            $('.thumbnail').on('click', (event) => {
+                const index = $('.thumbnail').index(event.currentTarget);
+                this.showGalleryPhoto(index);
+                this.toggleThumbnailSelection($(event.currentTarget));
+            });
     });
 }
     showSlides(n) {
@@ -22,35 +26,14 @@ class TemplateManager {
         slides.addClass('hidden'); // Agregar la clase hidden a todos los slides
         slides.eq(this.slideIndex - 1).removeClass('hidden'); // Quitar la clase hidden al slide actual
     }
-
-    mostrarContenidoFAQ(btn) {
-       const divToShow=btn.closest('.question').find('.question-paragraph');
-       divToShow.removeClass('hide-question-paragraph');
-       divToShow.toggleClass(' showAnimation closeAnimation');
-       this.voltearBotonSeleccionado(btn);
-       this.sombrearTituloPregunta(btn);
+    showGalleryPhoto(n) {
+        let galleryPhotos = $('.slideshow-gallery'); // Usar jQuery para seleccionar elementos
+        galleryPhotos.addClass('hidden'); // Agregar la clase hidden a todos los slides
+        galleryPhotos.eq(n).removeClass('hidden'); // Quitar la clase hidden al slide actual
     }
-    voltearBotonSeleccionado(btn){
-        btn.toggleClass('rotated');
-    }
-    sombrearTituloPregunta(btn){
-        btn.closest('.question-title').find('p').toggleClass('question-title-bolder');
-    }
-    cerrarAllQuestionsparagraph(btn){
-        const currentQuestionDiv=btn.closest('.question').find('.question-paragraph');
-        const questionParagraphDivs=$(".question-paragraph");
-        const self = this; // Almacenar una referencia a la instancia de TemplateManager
-        this.mostrarContenidoFAQ(btn);
-        questionParagraphDivs.each(function(){
-            const questionParagraphDiv = $(this);
-            if (questionParagraphDiv.is(currentQuestionDiv)) {
-                return;
-            }
-            if (questionParagraphDiv.hasClass('showAnimation')) {
-            const btnQuestionParagraphDiv=questionParagraphDiv.siblings('.question-title').first().find('.btn-questions');
-            self.mostrarContenidoFAQ(btnQuestionParagraphDiv);
-            }
-        });
+    toggleThumbnailSelection(thumbnail){
+        $('.thumbnail').removeClass('selected');
+        thumbnail.addClass('selected');
     }
     init() {
         this.loadEventListeners();

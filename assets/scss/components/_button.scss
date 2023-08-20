@@ -1,0 +1,18 @@
+
+  .description-product-add-product-btn{
+    @include flex-center($flex-direction: row, $flex-style: centerBoth); 
+    @include width-height($height: 50px);
+    @include background-color($orange,$white);
+    gap: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    font-weight: $font-weight-700;
+    margin-top: 15px;
+    img{
+     @include width-height($width: 18px, $height: 18px);
+    }
+    @include respond-to('large'){
+      margin-top: 0;
+    }
+  }
