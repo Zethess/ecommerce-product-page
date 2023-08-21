@@ -9,6 +9,12 @@
     border-radius: 10px;
     font-weight: $font-weight-700;
     margin-top: 15px;
+    cursor: pointer;
+    box-shadow: -1px 26px 63px -17px rgba(255,125,26,1);
+
+    &:hover{
+      opacity: 0.7;
+    }
     img{
      @include width-height($width: 18px, $height: 18px);
     }
