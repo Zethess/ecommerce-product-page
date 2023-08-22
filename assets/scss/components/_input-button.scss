@@ -2,7 +2,7 @@
     position: relative;
   }
   .description-product-add-product-input-minus{
-    @include position-configuration($top:23px,$left:5%);
+    @include position-configuration($top:23px,$left:10%);
     cursor: pointer;
   }
   .description-product-add-product-input-div{
@@ -17,6 +17,6 @@
   .description-product-add-product-input-plus{
     position: absolute;
     top: 20px;
-    right: 5%;
+    right: 10%;
     cursor: pointer;
   }

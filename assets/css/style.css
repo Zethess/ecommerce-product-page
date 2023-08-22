@@ -5,289 +5,6 @@ html {
   font-family: "Kumbh Sans", sans-serif;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-@media (min-width: 1000px) {
-  .slideshow-container {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-  }
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  background: hsl(0, 0%, 100%);
-  color: hsl(0, 0%, 0%);
-  cursor: pointer;
-  position: absolute;
-  top: 45%;
-  padding: 9px 13px 7px 10px;
-  font-weight: bold;
-  transition: 0.6s ease;
-  user-select: none;
-  border-radius: 50%;
-  border: none;
-  margin: 0px 15px;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  padding: 9px 10px 7px 13px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  opacity: 0.8;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.slideshow-gallery-container {
-  position: relative;
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-}
-@media (min-width: 1000px) {
-  .slideshow-gallery-container {
-    opacity: 1;
-    visibility: visible;
-    display: block;
-  }
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-.slideshow-gallery {
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.thumbnail-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 32px;
-  margin-top: 30px;
-}
-
-/* Six columns side by side */
-.thumbnail {
-  width: 88px;
-  height: 88px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: hsl(0, 0%, 100%);
-}
-.thumbnail.selected {
-  border: 2px solid hsl(26, 100%, 55%);
-}
-.thumbnail.selected .demo {
-  opacity: 0.2;
-}
-
-.demo:hover {
-  opacity: 0.4;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: hsla(0, 0%, 0%, 0.6);
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  top: 50px;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 523px;
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: -32px;
-  right: 25px;
-  fill: hsl(0, 0%, 100%);
-}
-.close:hover {
-  cursor: pointer;
-  fill: hsl(26, 100%, 55%);
-}
-
-/* Hide the slides by default */
-.modal-image {
-  width: 500px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 20px;
-  user-select: none;
-}
-
-/* Next & previous buttons */
-.prev-modal-image,
-.next-modal-image {
-  cursor: pointer;
-  position: absolute;
-  top: 35%;
-  width: auto;
-  padding: 12px 20px 10px 15px;
-  stroke: hsl(0, 0%, 0%);
-  transition: 0.2s ease;
-  border-radius: 50%;
-  user-select: none;
-  -webkit-user-select: none;
-  border: none;
-}
-.prev-modal-image:hover,
-.next-modal-image:hover {
-  stroke: hsl(26, 100%, 55%);
-}
-
-/* Position the "next button" to the right */
-.next-modal-image {
-  right: 0;
-  padding: 12px 15px 10px 18px;
-}
-
-.prev-modal-image {
-  left: -20px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.modal-thumbnail {
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: hsl(0, 0%, 100%);
-}
-.modal-thumbnail.selected {
-  border: 2px solid hsl(26, 100%, 55%);
-}
-.modal-thumbnail.selected .demo {
-  opacity: 0.2;
-}
-
-.thumbnail-modal-gallery {
-  padding: 0px 50px 0px 30px;
-}
-
-.show {
-  display: block;
-}
-
-.header-user-cart-products-div {
-  box-shadow: 0px 15px 36px -10px rgba(29, 32, 37, 0.5);
-  position: absolute;
-  max-width: 350px;
-  width: 100%;
-  background-color: hsl(0, 0%, 100%);
-  z-index: 999;
-  border-radius: 10px;
-  top: 7%;
-  right: 12px;
-}
-@media (min-width: 1000px) {
-  .header-user-cart-products-div {
-    left: 58%;
-  }
-}
-
-.header-user-cart-products-div-name {
-  font-weight: bold;
-  padding: 20px;
-  border-bottom: 1px solid hsl(0, 0%, 89%);
-  margin-bottom: 20px;
-}
-
-.header-user-cart-products-description-default {
-  font-weight: 700;
-  text-align: center;
-  height: 200px;
-  padding-top: 80px;
-}
-
-.header-user-cart-products-description {
-  padding: 0px 20px 20px 20px;
-  color: hsl(219, 9%, 45%);
-}
-
-.header-user-cart-products-description-price strong {
-  color: hsl(220, 13%, 13%);
-}
-
-.header-user-cart-products-description-total {
-  font-weight: bold;
-  color: hsl(220, 13%, 13%);
-}
-
-.header-user-cart-products-description-grid {
-  display: grid;
-  grid-template-columns: 0.4fr 2.5fr 0.1fr;
-  column-gap: 13px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.header-user-cart-products-description-grid img {
-  overflow: hidden;
-  border-radius: 4px;
-}
-.header-user-cart-products-description-grid svg {
-  fill: hsl(221, 22%, 81%);
-}
-.header-user-cart-products-description-grid svg:hover {
-  fill: hsl(26, 100%, 55%);
-  cursor: pointer;
-}
-
-.header-user-cart-products-btn {
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  background-color: hsl(26, 100%, 55%);
-  color: hsl(0, 0%, 100%);
-  margin-bottom: 10px;
-}
-.header-user-cart-products-btn:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
 @media (min-width: 1000px) {
   .header-ham-menu {
     opacity: 0;
@@ -458,12 +175,12 @@ label[for=ham-menu] {
   }
   .nav-options .hover-element {
     position: absolute;
-    width: 0;
     top: 67px;
+    left: 0;
+    width: 0;
     height: 3px;
     background-color: hsl(26, 100%, 55%);
     bottom: 0;
-    left: 0;
     transition: all 0.3s ease;
   }
 }
@@ -491,6 +208,10 @@ label[for=ham-menu] {
   align-items: center;
 }
 
+.header-logo {
+  height: 25px;
+}
+
 .header-user-cart {
   display: flex;
   flex-direction: row;
@@ -502,16 +223,16 @@ label[for=ham-menu] {
 }
 .header-user-cart.active::after {
   content: attr(data-count);
-  font-size: 10px;
-  text-align: center;
-  color: hsl(0, 0%, 100%);
   position: absolute;
   top: -3px;
   left: 10px;
   width: 18px;
   height: 13px;
+  background: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  font-size: 10px;
+  text-align: center;
   border-radius: 44%;
-  background-color: hsl(26, 100%, 55%);
 }
 @media (min-width: 1000px) {
   .header-user-cart.active::after {
@@ -585,6 +306,10 @@ a {
 .description-product-add-product-btn:hover {
   opacity: 0.7;
 }
+.description-product-add-product-btn.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 .description-product-add-product-btn img {
   width: 18px;
   height: 18px;
@@ -593,6 +318,293 @@ a {
   .description-product-add-product-btn {
     margin-top: 0;
   }
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+@media (min-width: 1000px) {
+  .slideshow-container {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  padding: 9px 13px 7px 10px;
+  font-weight: bold;
+  transition: 0.6s ease;
+  user-select: none;
+  border-radius: 50%;
+  border: none;
+  margin: 0px 15px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  padding: 9px 10px 7px 13px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  opacity: 0.8;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-gallery-container {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+@media (min-width: 1000px) {
+  .slideshow-gallery-container {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+.slideshow-gallery {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Container for image text */
+.caption-container {
+  background: hsl(0, 0%, 13%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 2px 16px;
+}
+
+.thumbnail-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+  margin-top: 30px;
+}
+
+/* Six columns side by side */
+.thumbnail {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+.thumbnail.selected {
+  border: 2px solid hsl(26, 100%, 55%);
+}
+.thumbnail.selected .demo {
+  opacity: 0.2;
+}
+
+.demo:hover {
+  opacity: 0.4;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+.modal-content {
+  position: relative;
+  top: 50px;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 523px;
+}
+
+.close {
+  position: absolute;
+  top: -32px;
+  right: 25px;
+  fill: hsl(0, 0%, 100%);
+}
+.close:hover {
+  cursor: pointer;
+  fill: hsl(26, 100%, 55%);
+}
+
+.modal-image {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.prev-modal-image,
+.next-modal-image {
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  width: auto;
+  padding: 12px 20px 10px 15px;
+  stroke: hsl(0, 0%, 0%);
+  transition: 0.2s ease;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-select: none;
+  border: none;
+}
+.prev-modal-image:hover,
+.next-modal-image:hover {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.next-modal-image {
+  right: 0;
+  padding: 12px 15px 10px 18px;
+}
+
+.prev-modal-image {
+  left: -20px;
+}
+
+.modal-thumbnail {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+.modal-thumbnail.selected {
+  border: 2px solid hsl(26, 100%, 55%);
+}
+.modal-thumbnail.selected .demo {
+  opacity: 0.2;
+}
+
+.thumbnail-modal-gallery {
+  padding: 0px 50px 0px 30px;
+}
+
+.show {
+  display: block;
+}
+
+.header-user-cart-products-div {
+  box-shadow: 0px 15px 36px -10px rgba(29, 32, 37, 0.4);
+  position: absolute;
+  max-width: 350px;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 999;
+  border-radius: 10px;
+  top: 10%;
+  right: 12px;
+}
+@media (min-width: 1000px) {
+  .header-user-cart-products-div {
+    left: 62%;
+    top: 11%;
+  }
+}
+
+.header-user-cart-products-div-header {
+  display: grid;
+  grid-template-columns: 1.9fr 0.1fr;
+  align-items: center;
+  border-bottom: 1px solid hsl(0, 0%, 89%);
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+.header-user-cart-products-div-header svg {
+  fill: #69707D;
+}
+.header-user-cart-products-div-header svg:hover {
+  fill: hsl(26, 100%, 55%);
+}
+
+.header-user-cart-products-description-default {
+  font-weight: 700;
+  text-align: center;
+  height: 200px;
+  padding-top: 80px;
+}
+
+.header-user-cart-products-description {
+  padding: 0px 20px 20px 20px;
+  color: hsl(219, 9%, 45%);
+}
+
+.header-user-cart-products-description-price strong {
+  color: hsl(220, 13%, 13%);
+}
+
+.header-user-cart-products-description-total {
+  font-weight: bold;
+  color: hsl(220, 13%, 13%);
+}
+
+.header-user-cart-products-description-grid {
+  display: grid;
+  grid-template-columns: 0.4fr 2.5fr 0.1fr;
+  column-gap: 13px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header-user-cart-products-description-grid img {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.header-user-cart-products-description-grid svg {
+  fill: hsl(221, 22%, 81%);
+}
+.header-user-cart-products-description-grid svg:hover {
+  fill: hsl(26, 100%, 55%);
+  cursor: pointer;
+}
+
+.header-user-cart-products-btn {
+  width: 100%;
+  height: 50px;
+  background: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+.header-user-cart-products-btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 @media (min-width: 1000px) {
@@ -698,7 +710,7 @@ a {
 .description-product-add-product-input-minus {
   position: absolute;
   top: 23px;
-  left: 5%;
+  left: 10%;
   cursor: pointer;
 }
 
@@ -716,7 +728,7 @@ a {
 .description-product-add-product-input-plus {
   position: absolute;
   top: 20px;
-  right: 5%;
+  right: 10%;
   cursor: pointer;
 }
 
@@ -740,6 +752,10 @@ a {
 }
 .description-product-add-product-btn:hover {
   opacity: 0.7;
+}
+.description-product-add-product-btn.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 .description-product-add-product-btn img {
   width: 18px;

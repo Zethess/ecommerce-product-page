@@ -42,7 +42,7 @@
       </div>
       <div class="header-content">
         <div class="header-logo-nav">
-          <div>
+          <div class="header-logo">
             <img src="assets/images/logo.svg" alt="">
           </div>
           <nav>
@@ -69,9 +69,12 @@
   </header>
   <main>
     <div class="header-user-cart-products-div hidden">
-      <p class="header-user-cart-products-div-name">Cart</p>
+      <div class="header-user-cart-products-div-header">
+        <p class="header-user-cart-products-div-name">Cart</p>
+        <svg id="header-user-cart-products-div-close" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"  fill-rule="evenodd"/></svg>  
+      </div>
       <div class="header-user-cart-products-description" id="header-user-cart-products-description-container">
-        <p class="header-user-cart-products-description-default">Your car is empty</p>
+        
       </div>
     </div>   
     <!-- Slideshow container -->
@@ -193,7 +196,7 @@
       <input class="description-product-add-product-input-div" id="minus-plus-input" type="text" value="0" min="0" readonly>
       <img class="description-product-add-product-input-plus" id="plus-icon" src="assets/images/icon-plus.svg" alt="">
       </div>
-      <button class="description-product-add-product-btn" id="add-to-cart-btn"><img src="assets/images/icon-cart.svg" alt="">Add to cart</button>
+      <button class="description-product-add-product-btn disabled" id="add-to-cart-btn" disabled><img src="assets/images/icon-cart.svg" alt="">Add to cart</button>
     </div>
   </div>
 </div>

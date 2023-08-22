@@ -16,6 +16,9 @@
 .header-logo-nav{
   @include flex-center(row, align);
 }
+.header-logo{
+  height: 25px;
+}
 .header-user-cart{
   @include flex-center(row, align);
   position: relative;
@@ -24,16 +27,12 @@
   margin: 0px 25px;
   &.active::after{
     content: attr(data-count);
+    @include position-configuration(absolute,-3px,10px);
+    @include width-height(18px, 13px);
+    @include background-color;
     font-size: 10px;
     text-align: center;
-    color: $white;
-    position: absolute;
-    top: -3px;
-    left: 10px;
-    width: 18px;
-    height: 13px;
     border-radius: 44%;
-    background-color: $orange;
     @include respond-to('large'){
       top: 5px;
     }
@@ -48,7 +47,6 @@
       fill:$very-dark-blue;
     }
   }
-  
 }
 .avatar{
   img:hover{
@@ -65,11 +63,9 @@
     padding-bottom: 35px;
     border-bottom: 1px solid hsl(0, 0%, 89%);
   }
-
   .avatar{
     img{
-      width: 45px;
-      height: 45px;
+      @include width-height(45px, 45px);
     }
   }
 }
