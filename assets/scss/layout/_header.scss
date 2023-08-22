@@ -18,9 +18,26 @@
 }
 .header-user-cart{
   @include flex-center(row, align);
+  position: relative;
   height: 100%;
   gap: 25px;
   margin: 0px 25px;
+  &.active::after{
+    content: attr(data-count);
+    font-size: 10px;
+    text-align: center;
+    color: $white;
+    position: absolute;
+    top: -3px;
+    left: 10px;
+    width: 18px;
+    height: 13px;
+    border-radius: 44%;
+    background-color: $orange;
+    @include respond-to('large'){
+      top: 5px;
+    }
+  }
   @include respond-to('large'){
     gap: 35px;
   }
@@ -31,6 +48,7 @@
       fill:$very-dark-blue;
     }
   }
+  
 }
 .avatar{
   img:hover{

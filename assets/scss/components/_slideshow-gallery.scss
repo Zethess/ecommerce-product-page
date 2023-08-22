@@ -1,0 +1,53 @@
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-gallery-container {
+    position: relative;
+    @include full-page-hide-or-not;
+    @include respond-to('large'){
+      @include full-page-hide-or-not(1,visible,block);
+    }
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+
+  .slideshow-gallery{
+    overflow: hidden;
+    border-radius: 20px;
+    
+  }
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  .thumbnail-gallery{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 32px;
+    margin-top: 30px;
+  }
+  
+  /* Six columns side by side */
+  .thumbnail {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: $white;
+    &.selected
+    {
+      border: 2px solid $orange;
+      .demo{
+        opacity: 0.2;
+      }
+    }
+  }
+  .demo{
+  &:hover{
+    opacity: 0.4;
+  }
+}

@@ -3,6 +3,7 @@
   }
   .description-product-add-product-input-minus{
     @include position-configuration($top:23px,$left:5%);
+    cursor: pointer;
   }
   .description-product-add-product-input-div{
     @include width-height($height: 50px);
@@ -17,4 +18,5 @@
     position: absolute;
     top: 20px;
     right: 5%;
+    cursor: pointer;
   }

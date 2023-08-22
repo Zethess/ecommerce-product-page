@@ -38,7 +38,7 @@
     font-weight: $font-weight-700;
   }
   .description-product-price-after{
-    @include flex-center(column, align);
+    @include flex-center(row, align);
     font-size: 27px;
     span{
       font-size: 15px;
