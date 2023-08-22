@@ -17,7 +17,7 @@
     }
     &.disabled{
       cursor: not-allowed;
-      opacity: 0.5;
+      opacity: 0.9;
     }
     img{
      @include width-height($width: 18px, $height: 18px);
